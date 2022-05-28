@@ -38,65 +38,159 @@
 
 
 
-        <title>psframework</title>
-        <style type="text/css">
-            #social-share{ 
-                /* only show social widgets when JS is working */
-                display:none;
+        <title>PortoSpire Development</title>
+        <style>
+            .masthead-brand{
+                text-align: center;
+            }
+            footer a,footer a:visited,footer a:hover,footer a:active{
+                color:#f5f5f5;
+            }
+            footer.footer{
+                position:initial;
+                background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.9));
+                height:11rem;
+                width: 100%;
+                color: rgba(255, 255, 255, .5);
+                height:7em;
+                min-height:6em;
+                line-height:1.5em;
+                /*position:absolute;
+                bottom:0;*/
+                padding:1em;
+            }
+            footer.footer>.container{
+                text-align:left;
+            }
+            html>body{
+                margin-bottom:0;
+            }
+            body{
+                background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0,0,0,0),rgba(0, 0, 0, 0.9)),url(https://assets.portospire.com/github.io/security-g55d3f5b4b_1920.webp);
+            }
+            .main-container .card{
+                color:#333;
+                text-align: left;
+            }
+            .main-container{
+                min-height: calc(100vh-11rem-130px);
+            }
+            .main-container>p{
+                background-color:rgba(255,255,255,.9);
+                padding:1rem;
+                border-radius:.2rem;
+            }
+            body>footer a,body>footer a:visited,body>footer a:hover,body>footer a:active{
+                color:#f8f9fa;
+            }
+            footer .social-icons, footer .social-icons a, footer .social-icons a:visited, footer .social-icons a:active, footer .social-icons a:link {
+                color: #f8f9fa;
+                transition: color 1.5s;
+            }
+            footer .social-icons{
+                padding: .5rem;
+                margin: 0;
+                font-size: 2em;
+            }
+            footer .social-icons a:hover{
+                color:#56A9F6;
+            }
+            .footer-icon{
+                padding:1rem;
+                margin-right:.3rem;
+                margin-left: .3rem;
+                background-color:#f8f9fa;
+                transition: background-color 2s;
+            }
+            .icon-linkedin{
+                -webkit-mask:  url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d='M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z'/></svg>") no-repeat 50% 50%;
+                mask: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d='M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z'/></svg>") no-repeat 50% 50%;
+            }
+            .icon-twitter{
+                -webkit-mask:  url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d='M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z'/></svg>") no-repeat 50% 50%;
+                mask: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d='M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z'/></svg>") no-repeat 50% 50%;
+            }
+            .icon-facebook{
+                -webkit-mask:  url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d='M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z'/></svg>") no-repeat 50% 50%;
+                mask: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d='M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z'/></svg>") no-repeat 50% 50%;
+            }
+            .icon-instagram{
+                -webkit-mask:  url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d='M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z'/></svg>") no-repeat 50% 50%;
+                mask: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d='M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z'/></svg>") no-repeat 50% 50%;
+            }
+            .icon-googleplus{
+                -webkit-mask:  url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d='M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM164 356c-55.3 0-100-44.7-100-100s44.7-100 100-100c27 0 49.5 9.8 67 26.2l-27.1 26.1c-7.4-7.1-20.3-15.4-39.8-15.4-34.1 0-61.9 28.2-61.9 63.2 0 34.9 27.8 63.2 61.9 63.2 39.6 0 54.4-28.5 56.8-43.1H164v-34.4h94.4c1 5 1.6 10.1 1.6 16.6 0 57.1-38.3 97.6-96 97.6zm220-81.8h-29v29h-29.2v-29h-29V245h29v-29H355v29h29v29.2z'/></svg>") no-repeat 50% 50%;
+                mask: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d='M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM164 356c-55.3 0-100-44.7-100-100s44.7-100 100-100c27 0 49.5 9.8 67 26.2l-27.1 26.1c-7.4-7.1-20.3-15.4-39.8-15.4-34.1 0-61.9 28.2-61.9 63.2 0 34.9 27.8 63.2 61.9 63.2 39.6 0 54.4-28.5 56.8-43.1H164v-34.4h94.4c1 5 1.6 10.1 1.6 16.6 0 57.1-38.3 97.6-96 97.6zm220-81.8h-29v29h-29.2v-29h-29V245h29v-29H355v29h29v29.2z'/></svg>") no-repeat 50% 50%;
+            }
+            footer .social-icons a:hover .footer-icon{
+                background-color:#56A9F6;
             }
         </style>
+
+
         <!--[if lt IE 9]><script type="text/javascript" defer="defer" src="https://assets.portospire.com/psf/js/html5shiv.js"></script><![endif]-->
         <!--[if lt IE 9]><script type="text/javascript" defer="defer" src="https://assets.portospire.com/psf/js/respond.min.js"></script><![endif]-->
     </head>
-    <body class="d-flex flex-column" style="min-height:100vh;">
-        <script>
-            //document.body.style.display = 'none';
-        </script>
-
-        <!-- Social sharing block -->
+    <body class="d-flex flex-column min-vh-100">
 
         <div class="container-fluid">
-            <h3 class="mt-5 masthead-brand">
-                <img src="https://assets.portospire.com/psf/img/portospire-header-white.svg" alt="PortoSpire - be seen" height="130em" />
-            </h3>
+            <h1 class="mt-5 masthead-brand"><a href="https://www.portospire.com?utm_source=GithubOrganizationPage">
+                    <img src="https://assets.portospire.com/psf/img/portospire-header-white.svg" alt="PortoSpire - be seen" height="130" />
+                </a>
+            </h1>
+
         </div>
         <main class="container" role="main">
-            <div class="container main-container" role="main">
-                <div class="cover-container justify-content-center">
-                    <div class="cover">
-                        <h1 class="cover-heading">This website is coming soon.</h1>
-                        <p class="lead">PortoSpire builds simple and beautiful home pages. Get your hand crafted design showcasing your brand to your customers today.</p>
-                        <p class="lead">
-                            <a href="https://www.portospire.com/" class="btn btn-lg btn-secondary">Learn more</a>
-                        </p>
+            <div class=" main-container" role="main">
+                <p>As a company built using many open source libraries and frameworks, here are some of the internally-developed libraries we have contributed back to the community.</p>
+
+                <div class="card" style="width: 18rem;">
+                    <div class="card-heading">
+                        <a href="./suiteCRMClient/" class="stretched-link">
+                            <img src="https://assets.portospire.com/github.io/suitecrmclient.png" class="card-img-top" alt="SuiteCRM Client for PHP">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">SuiteCRMClient</h5>
+                        <p class="card-text">A free (LGPL3) client library in PHP for use with SuiteCRM to abstract various API usage to enable easier integrations as standalone, in Laminas MVC (ZF3), or Laminas Mezzio (Zend Expressive).</p>
                     </div>
                 </div>
-
             </div>
+
         </main><!-- /container -->
 
-        <footer class="footer justify-content-center">
+        <footer class="footer justify-content-center muted mt-auto">
             <div class="container">
-                <span class="muted">&copy; 2022 PortoSpire, LLC. All rights reserved. <a href="https://www.portospire.com/policies">Terms of Use</a> | <a href="https://www.portospire.com/policies/privacy-policy">Privacy</a> </span>
+                <div class="row align-items-center">
+                    <div class="col">
+                        &copy; 2022 PortoSpire, LLC. All rights reserved. 
+                    </div>
+                    <div class="col">
+                        <a href="https://www.portospire.com/privacy">Privacy</a> |
+                        <a href="https://www.portospire.com/careers">Careers</a>
+                    </div>
+                    <div class="col">
+                        <div class="social-icons">
+                            <a href="https://facebook.com/portospire" target="_blank" aria-label="PortoSpire on Facebook" rel="noopener"><i class="icon-facebook footer-icon" title="PortoSpire on Facebook" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com/ThePortoSpire" target="_blank" aria-label="PortoSpire on Twitter" rel="noopener"><i class="icon-twitter footer-icon" title="PortoSpire on Twitter" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/company/portospire" target="_blank" aria-label="PortoSpire on LinkedIn" rel="noopener"><i class="footer-icon icon-linkedin" aria-hidden="true" title="PortoSpire on LinkedIn"></i></a>
+                            <a href="https://www.instagram.com/portospire/" target="_blank" aria-label="PortoSpire on Instagram" rel="noopener"><i class="icon-instagram footer-icon" title="PortoSpire on Instagram" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- https://sites.portospire.com/ -->
         </footer>
-        <style type="text/css">footer a,footer a:visited,footer a:hover,footer a:active{color:#f5f5f5;}</style>
 
-        <script src="https://assets.portospire.com/psf/js/jquery-3.6.0.min.js"></script>
-        <script src="https://assets.portospire.com/psf/popper-1.16.1/umd/popper.min.js"></script>
-        <script src="https://assets.portospire.com/psf/bootstrap-4.6.1/js/bootstrap.min.js"></script>                                
-        
+
+        <script src="https://assets.portospire.com/psf/js/jquery-3.6.0.min.js" defer="defer"></script>
+        <script src="https://assets.portospire.com/psf/popper-1.16.1/umd/popper.min.js" defer="defer"></script>
+        <script src="https://assets.portospire.com/psf/bootstrap-4.6.1/js/bootstrap.min.js" defer="defer"></script>                                
 
         <!-- show social sharing area after onReady -->
         <script type="text/javascript">
             var async = async || [];
             async.push(["ready", function () {
                     $('body').addClass('js');
-                    $(document).ready(function () {
-                        //show social sharing components after waiting for load
-                        $("#social-share").delay(1000).slideUp(800).delay(100).fadeIn(800);
-                    });
                 }]);
 // loaded anywhere on the page asynchronously.
             (function jqIsReady() {
@@ -123,16 +217,12 @@
                         }
                     }
                 };
-                window.setTimeout(function () {
-                    $('body').show(300);
-                }, 150);
 
             })();
         </script>
         <noscript id="deferred-styles">
-            <link href="https://assets.portospire.com/psf/bootstrap-4.6.1/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="https://assets.portospire.com/psf/bootstrap-4.6.1/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
         <link href="https://assets.portospire.com/psf/css/styles.min.css?t=202110311202" media="screen" rel="stylesheet" type="text/css">
-
         </noscript>
         <script>
             var loadDeferredStyles = function () {
@@ -151,35 +241,6 @@
             else
                 window.addEventListener('load', loadDeferredStyles);
         </script>
-        <noscript>
-        <style type="text/css">
-            @import url (https://assets.portospire.com/psf/fonts/font-awesome-5.13.1/css/all.min.css);
-            body{ display:block;}
-            </style>
-        </noscript>
-        <style type="text/css">
-                                        body > footer{
-                                            width: 100%;
-                                            color: rgba(255, 255, 255, .5);
-                                            height:6em;
-                                            min-height:3em;
-                                            line-height:3em;
-                                            position:absolute;
-                                            bottom:0;
-                                            padding:1em;
-                                        }
-                                        footer > .container-fluid {
-                                            background-color: #000;
-                                            margin: auto;
-                                            text-align: center;
-                                        }
-                                        body{
-                                            background: linear-gradient(rgba(51, 51, 51, 0.3),rgba(255,255,255,0.5),rgba(51, 51, 51, 0.6)),
-                                                url('https://assets.portospire.com/psf/img/669687786.webp');
-                                            margin-bottom:3em;
-                                        }
-                                    </style>
-
 
     </body>
 </html>
